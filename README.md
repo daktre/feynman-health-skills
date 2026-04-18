@@ -4,7 +4,7 @@ Skills to make [Feynman](https://github.com/getcompanion-ai/feynman) useful for 
 
 ## The problem
 
-[Feynman](https://github.com/getcompanion-ai/feynman) is a genuinely good AI research agent. It searches, reads, synthesises, and drafts. But its entire source layer runs through [AlphaXiv](https://www.alphaxiv.org) (arXiv, basically), which means it knows about comp sci, physics, and quantitative biology. It does not know whether PubMed exists.
+[Feynman](https://github.com/getcompanion-ai/feynman) is a  good AI research agent. It searches, reads, synthesises, and drafts. But its entire source layer runs through [AlphaXiv](https://www.alphaxiv.org) (arXiv, basically), which means it knows about comp sci, physics, and quantitative biology. It does not know whether PubMed exists.
 
 For people doing health policy and systems research, epidemiology, or qualitative work, this is unusable. The skills here fix that.
 
@@ -90,7 +90,7 @@ Drop issues on GitHub or email hello@daktre.com.
 
 ## Affiliation
 
-Built at [IPH Bengaluru](https://iph.org.in) as part of broader work on AI tooling for health systems research.
+Built at [IPH Bengaluru](https://www.iphbengaluru.res.in) as part of broader work on AI tooling for health systems research.
 
 ## License
 
