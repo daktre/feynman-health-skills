@@ -10,9 +10,16 @@ For people doing health policy and systems research, epidemiology, or qualitativ
 
 ## What's in the box
 
+## Prerequisites
+
+You need [Feynman](https://github.com/getcompanion-ai/feynman) installed. See [Feynman's installation guide](https://github.com/getcompanion-ai/feynman?tab=readme-ov-file#installation) for setup instructions.
+
+Once Feynman is installed, come back here.
+
 ### [`pubmed-research.md`](./pubmed-research.md)
 
 Tells Feynman to query PubMed first. Teaches it MeSH term logic, study design quality appraisal, and how to weight evidence from low- and middle-income countries differently.
+
 
 **Test run**: [ASHA programme effectiveness review](https://notes.daktre.com/6.-Index/Effectiveness-of-India's-ASHA-Programme) — pulled 19 sources, all appropriate (PubMed/PMC/grey, zero arXiv), correctly separated pilot evidence from routine programme evidence.
 
