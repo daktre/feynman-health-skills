@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependency folders (if Node/Python work gets added later)
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Editor backups
+*.bak
+*.backup
+
+# Feynman local cache
+.feynman/
