@@ -7,6 +7,22 @@ description: Use this skill when the research topic involves health systems, hea
 
 Health Policy and Systems Research (HPSR) operates with a different epistemology from clinical medicine and laboratory science. This skill teaches the agent to recognise, retrieve, evaluate, and synthesise HPSR evidence appropriately.
 
+## Evidence Confidence Scoring (Required)
+
+For all synthesised evidence, you must assign an explicit **Evidence Confidence Score** based on the following:
+
+- **High Confidence:** Systematic reviews with meta-analysis (if appropriate), large-scale robustly designed implementation studies, or high-quality grey literature from authoritative institutional sources (e.g., WHO, National Health Mission). Evidence is consistent, recent, and highly context-relevant.
+- **Medium Confidence:** Well-conducted observational studies, case studies, or policy analyses with clear methodology and reflexivity. Evidence is contextually relevant but potentially limited by scope or design.
+- **Low Confidence:** Narrative reviews, opinion pieces, older data without clear context, or studies lacking explicit methodological rigour.
+
+Additionally, for every source, explicitly categorize it:
+- **Peer-Reviewed Systematic Review**
+- **Primary Institutional Report** (Government, WHO, etc.)
+- **Peer-Reviewed Empirical Study**
+- **Expert Analysis/Opinion**
+
+Weighting must account for both the confidence score and the source type.
+
 ## What HPSR Is
 
 HPSR is an interdisciplinary field that studies health systems as complex adaptive systems. It draws on sociology, political science, economics, anthropology, organisational theory, and public administration alongside epidemiology and clinical science. Its core questions are:

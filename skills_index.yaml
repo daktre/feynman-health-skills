@@ -1,0 +1,22 @@
+# Skills Index for Feynman Agent
+# Defines skill metadata, triggers, and dependencies
+
+skills:
+  hpsr-epistemology:
+    file: hpsr-epistemology.md
+    triggers:
+      - health systems
+      - health policy
+      - implementation science
+      - qualitative health research
+    confidence_threshold: Medium
+    dependencies: []
+
+  pubmed-research:
+    file: pubmed-research.md
+    triggers:
+      - clinical research
+      - biomedical literature
+      - peer-reviewed study
+    confidence_threshold: Low
+    dependencies: []
