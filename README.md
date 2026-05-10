@@ -1,40 +1,80 @@
-# Feynman Health Skills
+# feynman-health-skills
 
-A collection of domain-specific skills, tools, and epistemological frameworks designed to turn your Feynman agent into a robust Health Policy and Systems Research (HPSR) engine.
+Skills, tools, and epistemological frameworks to make [Feynman](https://github.com/getcompanion-ai/feynman) useful for public health and Health Policy and Systems Research (HPSR) work.
 
-## Features
-- **PubMed CLI Connector:** Direct integration with NCBI databases to fetch clinical and epidemiological evidence.
-- **Enhanced HPSR Epistemology:** A formal evidence-assessment framework that mandates confidence scoring and source categorization.
-- **Modular Skills Index:** A structured way to manage agent capabilities.
+## The problem
+
+[Feynman](https://github.com/getcompanion-ai/feynman) is a powerful AI research agent designed for general research, relying heavily on [AlphaXiv](https://www.alphaxiv.org) (arXiv). While excellent for computer science, physics, and quantitative biology, it lacks a native understanding of health databases.
+
+For researchers in public health, epidemiology, or health policy, this default behavior is inadequate. This repository provides the necessary skills and tools to bridge that gap.
+
+## What's in the box
+
+- **PubMed CLI Connector (`pubmed_cli.py`):** Direct integration with NCBI databases to fetch clinical and epidemiological evidence.
+- **Enhanced HPSR Epistemology (`hpsr-epistemology.md`):** A formal evidence-assessment framework that mandates explicit **Evidence Confidence Scoring** (High/Medium/Low) and **Source Categorization**.
+- **Modular Skills Index (`skills_index.yaml`):** A structured way to manage and trigger agent capabilities based on research context.
+
+## Prerequisites
+
+You need [Feynman](https://github.com/getcompanion-ai/feynman) installed. See [Feynman's installation guide](https://github.com/getcompanion-ai/feynman?tab=readme-ov-file#installation) for setup.
 
 ## Quick Start: Integrating with your Feynman Agent
 
-These skills are designed to live alongside your existing Feynman agent configuration.
+1. **Clone this Repository:**
+   ```bash
+   git clone https://github.com/daktre/feynman-health-skills.git
+   cd feynman-health-skills
+   ```
 
-### 1. Clone this Repository
-```bash
-git clone https://github.com/daktre/feynman-health-skills.git
-cd feynman-health-skills
-```
+2. **Configure the PubMed CLI Tool:**
+   Make the script accessible as a tool for your agent:
+   ```bash
+   mkdir -p ~/.feynman/tools/
+   cp pubmed_cli.py ~/.feynman/tools/pubmed_search
+   chmod +x ~/.feynman/tools/pubmed_search
+   ```
 
-### 2. Configure the PubMed CLI Tool
-To allow your agent to use the PubMed connector, link the script to your agent's tools directory and make it executable:
+3. **Register Skills:**
+   Copy the skill Markdown files into your agent's skills directory:
+   ```bash
+   mkdir -p ~/.feynman/agent/skills/
+   cp hpsr-epistemology.md ~/.feynman/agent/skills/
+   cp pubmed-research.md ~/.feynman/agent/skills/
+   ```
 
-```bash
-# Ensure your agent's tools directory exists
-mkdir -p ~/.feynman/tools/
+For detailed setup, see [docs/INTEGRATION.md](./docs/INTEGRATION.md).
 
-# Copy/Link the script
-cp pubmed_cli.py ~/.feynman/tools/pubmed_search
-chmod +x ~/.feynman/tools/pubmed_search
-```
+## Why these skills matter
 
-### 3. Register the Skill
-Follow the [Detailed Integration Guide](./docs/INTEGRATION.md) to register these skills and the tool within your agent's configuration files.
+### [`pubmed-research.md`](./pubmed-research.md)
+Tells Feynman to query PubMed first. Teaches it MeSH term logic, study design quality appraisal, and how to weight evidence from low- and middle-income countries (LMICs) appropriately.
 
-## HPSR Epistemology
-Health Policy and Systems Research (HPSR) operates with a different epistemology from clinical medicine. This skill teaches the agent to retrieve, evaluate, and synthesise HPSR evidence with explicit **Evidence Confidence Scoring** (High/Medium/Low).
+### [`hpsr-epistemology.md`](./hpsr-epistemology.md)
+Teaches the agent that qualitative studies, mixed-methods designs, and implementation science papers are first-class evidence. It enforces strict **Evidence Confidence Scoring** (High/Medium/Low) to ensure reliable synthesis, and treats grey literature (WHO reports, government documents) as a primary source.
 
 ## Roadmap
-- [ ] Implementation of **WHO IRIS / Cochrane REST API** connectors.
-- [ ] Development of **Policy Writer** and **Grey Literature Appraisal** skills.
+
+### Short-term
+- `grey-literature.md` skill — explicitly prioritise WHO IRIS, MoHFW, NHSRC, NFHS, parliamentary reports.
+- `reviewer-appraisal.md` skill — CASP checklists, Cochrane risk-of-bias, GRADE framing.
+
+### Medium-term
+- WHO IRIS connector (OAI-PMH).
+- Cochrane REST API wrapper.
+
+### Longer-term
+- Local document ingestion (curated Indian health policy materials, institutional PDFs).
+- New workflows: `/sysrev`, `/policybrief`, `/appraise`, `/burden`, `/greylit`.
+
+## Affiliation
+
+Built at [IPH Bengaluru](https://www.iphbengaluru.res.in) as part of broader work on AI tooling for health systems research.
+
+## License
+
+MIT. Do what you want with these, including fork and modify. No attribution required, though nice if you mention where it came from.
+
+## See also
+
+- [Full project thinking](https://notes.daktre.com/6.-Index/feynman-health-fork)
+- [Original Feynman repo](https://github.com/getcompanion-ai/feynman)
