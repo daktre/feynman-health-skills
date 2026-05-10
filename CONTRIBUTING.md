@@ -17,18 +17,18 @@ We're open to pull requests for skill rewrites, but start with an issue first so
 
 ## Building the PubMed CLI connector
 
-This is the big ask. If you know Python or Node.js and want to build a CLI wrapper around NCBI E-utilities (esearch + efetch), this would unblock a lot of functionality.
+**Status: Completed.**
 
-Spec sketch:
+This connector is now implemented in `pubmed_cli.py`, which wraps NCBI E-utilities (esearch + efetch) to output standardized JSON. 
+
+*Note: Below was the original specification used for development.*
 
 ```bash
 pubmed search --query "malaria AND India" --limit 50 --output json
 pubmed fetch --pmid 12345678 --format full
 ```
 
-Output: JSON with title, authors, abstract, PMID, publication date, journal.
-
-Interested? Open an issue or email hello@daktre.com to discuss.
+If you are interested in extending this, please review the current implementation and open an issue to discuss enhancements.
 
 ## New skills
 
